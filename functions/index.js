@@ -146,7 +146,7 @@ exports.search = functions.https.onRequest((request, response) => {
 
 
 //GET Anime details
-exports.search = functions.https.onRequest((request, response) => {
+exports.desc = functions.https.onRequest((request, response) => {
     quest(`https://www1.gogoanime.ai${request.query.link}`, (error, _response, html) => {
         if (!error && _response.statusCode == 200) {
               const $ = cheerio.load(html);
@@ -184,22 +184,20 @@ exports.search = functions.https.onRequest((request, response) => {
 
 
 //get Episode for anime endpoint
-exports.search = functions.https.onRequest((request, response) => {
-    quest(`https://www1.gogoanime.ai/search.html?keyword=${request.query.name}`, (error, _response, html) => {
+exports.episodes = functions.https.onRequest((request, response) => {
+    quest(`https://ajax.gogocdn.net/ajax/load-list-episode?ep_start=${request.query.start}&ep_end=${request.query.end}&id=${request.query.id}&default_ep=0&alias=${request.query.name}`, (error, _response, html) => {
         if (!error && _response.statusCode == 200) {
-              const $ = cheerio.load(html);
-              const searchArray = [];
+          const $ = cheerio.load(html);
+          const episodeArr = [];
+          $('a').each((i,el) => {
+                const title = $(el).text()
+                const link = $(el).attr('href');
+                episodeArr.push({name:title, link:link})
 
-              $('ul.items li').each((i,el) => {
-                const title = $(el).find('p.name a').text();
-                const link = $(el).find('p.name a').attr('href');
-                const img = $(el).find('.img img').attr('src');
-                const release = $(el).find('p.released').text();
-                searchArray.push({name:title, link:link, image:img , release:release})
-              });
-              response.set('Access-Control-Allow-Origin', '*');
-              response.send(searchArray)
-            }
           });
+          response.set('Access-Control-Allow-Origin', '*');
+          response.send(episodeArr)
+        }
+      });
 });
 
