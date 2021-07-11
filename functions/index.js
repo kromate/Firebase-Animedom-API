@@ -100,3 +100,106 @@ exports.popular = functions.https.onRequest((request, response) => {
           });
 });
 
+
+//Recent for anime endpoint ================================================== WIP
+// the link here is for direct download only not details
+// http://localhost:3000/recent/?page=2 ============= EX
+exports.recent = functions.https.onRequest((request, response) => {
+    quest(`https://ajax.gogo-load.com/ajax/page-recent-release.html?page=${request.query.page}`, (error, _response, html) => {
+    if (!error && _response.statusCode == 200) {
+          const $ = cheerio.load(html);
+          const searchArray = [];
+
+          $('ul.items li').each((i,el) => {
+            const title = $(el).find('p.name a').text();
+            const episode = $(el).find('p.episode').text();
+            const link = $(el).find('p.name a').attr('href');
+            const img = $(el).find('.img img').attr('src');
+            searchArray.push({name:title, link:link, image:img, episode:episode })
+          });
+          response.set('Access-Control-Allow-Origin', '*');
+          response.send(searchArray)
+        }
+      });
+});
+
+
+//search for anime endpoint
+exports.search = functions.https.onRequest((request, response) => {
+    quest(`https://www1.gogoanime.ai/search.html?keyword=${request.query.name}`, (error, _response, html) => {
+        if (!error && _response.statusCode == 200) {
+              const $ = cheerio.load(html);
+              const searchArray = [];
+
+              $('ul.items li').each((i,el) => {
+                const title = $(el).find('p.name a').text();
+                const link = $(el).find('p.name a').attr('href');
+                const img = $(el).find('.img img').attr('src');
+                const release = $(el).find('p.released').text();
+                searchArray.push({name:title, link:link, image:img , release:release})
+              });
+              response.set('Access-Control-Allow-Origin', '*');
+              response.send(searchArray)
+            }
+          });
+});
+
+
+//GET Anime details
+exports.search = functions.https.onRequest((request, response) => {
+    quest(`https://www1.gogoanime.ai${request.query.link}`, (error, _response, html) => {
+        if (!error && _response.statusCode == 200) {
+              const $ = cheerio.load(html);
+              const availableepisodes = [];
+              const infoArray = [];
+                const name= (request.query.link).split('/')[2]
+                const id = $('input#movie_id').attr('value')
+              $('.anime_info_body p.type').each((i,el) => {
+                const det = $(el).text().split(':')[1]
+                infoArray.push({i:det})
+              })
+
+              $('ul#episode_page li').each((i,el) => {
+                const start = $(el).text().split('-')[0]
+                const end = $(el).text().split('-')[1]
+                availableepisodes.push({start:start, end:end})
+              })
+
+             let searchArray=   {
+                 id:id,
+                name:name,
+                type:infoArray[0].i,
+                    summary:infoArray[1].i,
+                    genre:infoArray[2].i,
+                    release:infoArray[3].i,
+                    status:infoArray[4].i,
+                    otherNames:infoArray[5].i,
+                     episodes:availableepisodes}
+
+                     response.set('Access-Control-Allow-Origin', '*');
+              response.send(searchArray)
+            }
+          });
+});
+
+
+//get Episode for anime endpoint
+exports.search = functions.https.onRequest((request, response) => {
+    quest(`https://www1.gogoanime.ai/search.html?keyword=${request.query.name}`, (error, _response, html) => {
+        if (!error && _response.statusCode == 200) {
+              const $ = cheerio.load(html);
+              const searchArray = [];
+
+              $('ul.items li').each((i,el) => {
+                const title = $(el).find('p.name a').text();
+                const link = $(el).find('p.name a').attr('href');
+                const img = $(el).find('.img img').attr('src');
+                const release = $(el).find('p.released').text();
+                searchArray.push({name:title, link:link, image:img , release:release})
+              });
+              response.set('Access-Control-Allow-Origin', '*');
+              response.send(searchArray)
+            }
+          });
+});
+
