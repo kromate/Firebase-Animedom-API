@@ -1,1 +1,29 @@
-{}
+{
+    "functions": {
+      "runtime": "nodejs12"
+    },
+    "firestore": {
+      "rules": "firestore.rules",
+      "indexes": "firestore.indexes.json"
+    },
+    "hosting": {
+      "public": " ",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ],
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
+      ]
+    },
+    "storage": {
+      "rules": "storage.rules"
+    },
+    "remoteconfig": {
+      "template": "remoteconfig.template.json"
+    }
+  }
