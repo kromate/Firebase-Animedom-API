@@ -10,12 +10,12 @@
 
 
 
-const coinbase = require('./SpotifyAPIs.js');
-const auth = require('./YouTubeAPIs.js');
-const auth = require('./DeezerAPIs.js');
-const auth = require('./YouTubeAPIs.js');
+const SpotifyAPIs = require('./APIs/SpotifyAPIs.js');
+const YouTubeAPIs = require('./APIs/YouTubeAPIs.js');
+const DeezerAPIs = require('./APIs/DeezerAPIs.js');
+const NapsterAPIs = require('./APIs/NapsterAPIs.js');
 
-exports.signup = auth.signUp;
-exports.CoinbaseRedirect = coinbase.CoinbaseRedirect;
-exports.CoinbaseToken = coinbase.CoinbaseToken;
+// exports.signup = auth.signUp;
+// exports.CoinbaseRedirect = coinbase.CoinbaseRedirect;
+// exports.CoinbaseToken = coinbase.CoinbaseToken;
 
