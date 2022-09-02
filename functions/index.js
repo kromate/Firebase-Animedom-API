@@ -8,7 +8,7 @@ const runtimeOpts = {
     memory: '1GB'
   }
 
-
+// firebase emulators:start
 
 //list by Letter for anime endpoint
 // http://localhost:3000/letters/?name=p ================= Exp
