@@ -1,0 +1,37 @@
+[debug] [2022-09-02T22:54:23.858Z] ----------------------------------------------------------------------
+[debug] [2022-09-02T22:54:23.859Z] Command:       /usr/local/bin/node /usr/local/bin/firebase emulators:start --only functions
+[debug] [2022-09-02T22:54:23.859Z] CLI Version:   10.2.1
+[debug] [2022-09-02T22:54:23.859Z] Platform:      darwin
+[debug] [2022-09-02T22:54:23.859Z] Node Version:  v16.14.0
+[debug] [2022-09-02T22:54:23.860Z] Time:          Fri Sep 02 2022 23:54:23 GMT+0100 (West Africa Standard Time)
+[debug] [2022-09-02T22:54:23.860Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2022-09-02T22:54:23.887Z] Object "" in "firebase.json" has unknown property: {"additionalProperty":"runtime"}
+[warn] ⚠  functions: The functions emulator is configured but there is no functions source directory. Have you run firebase init functions? {"metadata":{"emulator":{"name":"functions"},"message":"The functions emulator is configured but there is no functions source directory. Have you run \u001b[1mfirebase init functions\u001b[22m?"}}
+[debug] [2022-09-02T22:54:23.889Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2022-09-02T22:54:23.889Z] > authorizing via signed-in user (akpananthony33@gmail.com)
+[info] i  emulators: Starting emulators: functions {"metadata":{"emulator":{"name":"hub"},"message":"Starting emulators: functions"}}
+[debug] [2022-09-02T22:54:23.902Z] [hub] writing locator at /var/folders/b3/352hwdw91439glm3mkblq3840000gn/T/hub-anime-dom.json
+[warn] ⚠  functions: The functions emulator is configured but there is no functions source directory. Have you run firebase init functions? {"metadata":{"emulator":{"name":"functions"},"message":"The functions emulator is configured but there is no functions source directory. Have you run \u001b[1mfirebase init functions\u001b[22m?"}}
+[debug] [2022-09-02T22:54:24.625Z] Ignoring unsupported arg: auto_download {"metadata":{"emulator":{"name":"ui"},"message":"Ignoring unsupported arg: auto_download"}}
+[debug] [2022-09-02T22:54:24.625Z] Ignoring unsupported arg: port {"metadata":{"emulator":{"name":"ui"},"message":"Ignoring unsupported arg: port"}}
+[debug] [2022-09-02T22:54:24.625Z] Starting Emulator UI with command {"binary":"node","args":["/Users/kromate/.cache/firebase/emulators/ui-v1.6.5/server.bundle.js"],"optionalArgs":[],"joinArgs":false} {"metadata":{"emulator":{"name":"ui"},"message":"Starting Emulator UI with command {\"binary\":\"node\",\"args\":[\"/Users/kromate/.cache/firebase/emulators/ui-v1.6.5/server.bundle.js\"],\"optionalArgs\":[],\"joinArgs\":false}"}}
+[info] i  ui: Emulator UI logging to ui-debug.log {"metadata":{"emulator":{"name":"ui"},"message":"Emulator UI logging to \u001b[1mui-debug.log\u001b[22m"}}
+[debug] [2022-09-02T22:54:24.697Z] Web / API server started at localhost:4000
+ {"metadata":{"emulator":{"name":"ui"},"message":"Web / API server started at localhost:4000\n"}}
+[info] 
+┌─────────────────────────────────────────────────────────────┐
+│ ✔  All emulators ready! It is now safe to connect your app. │
+│ i  View Emulator UI at http://localhost:4000                │
+└─────────────────────────────────────────────────────────────┘
+
+┌───────────┬──────────────────────────────────┬─────────────────────┐
+│ Emulator  │ Host:Port                        │ View in Emulator UI │
+├───────────┼──────────────────────────────────┼─────────────────────┤
+│ Functions │ Failed to initialize (see above) │                     │
+└───────────┴──────────────────────────────────┴─────────────────────┘
+  Emulator Hub running at localhost:4400
+  Other reserved ports: 4500
+
+Issues? Report them at https://github.com/firebase/firebase-tools/issues and attach the *-debug.log files.
+ 
