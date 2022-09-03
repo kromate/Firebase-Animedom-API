@@ -105,6 +105,7 @@ exports.popular = functions.https.onRequest((request, response) => {
 // the link here is for direct download only not details
 // http://localhost:3000/recent/?page=2 ============= EX
 exports.recent = functions.https.onRequest((request, response) => {
+  console.log(puppeteer)
     quest(`https://ajax.gogo-load.com/ajax/page-recent-release.html?page=${request.query.page}`, (error, _response, html) => {
     if (!error && _response.statusCode == 200) {
           const $ = cheerio.load(html);
@@ -244,39 +245,39 @@ function DownloadLink (link) {
 }
 
 
-// function getdetails (link) {
-//     return new Promise(async (resolve, reject) => {
-//         try {
-//             const browser = await puppeteer.launch({
-//                 args: [
-//                   '--no-sandbox',
-//                   '--disable-setuid-sandbox',
-//                 ],
-//               });
-//             const page = await browser.newPage();
-//             await page.goto(`https://b-ok.africa${link}`, {waitUntil: 'networkidle2'});
-//             await page.waitForSelector('.details-book-cover > img',{visible: true})
+function DownloadLink (link) {
+    return new Promise(async (resolve, reject) => {
+        try {
+            const browser = await puppeteer.launch({
+                args: [
+                  '--no-sandbox',
+                  '--disable-setuid-sandbox',
+                ],
+              });
+            const page = await browser.newPage();
+            await page.goto(`https://b-ok.africa${link}`, {waitUntil: 'networkidle2'});
+            await page.waitForSelector('.details-book-cover > img',{visible: true})
             
-//             let urls = await page.evaluate(() => {
-//                 let results = {}
-//                 if(document.querySelector('#bookDescriptionBox')){
-//                     let text = document.querySelector('#bookDescriptionBox').innerText;
-//                     let img = document.querySelector('.details-book-cover > img').getAttribute('src')
-//                     let size = document.querySelector('a.btn.btn-primary.dlButton.addDownloadedBook').innerText;
-//                      results ={description:text, image:img, size:size}
-//                 }else{
-//                     let img = document.querySelector('.details-book-cover > img').getAttribute('src')
-//                     let size = document.querySelector('a.btn.btn-primary.dlButton.addDownloadedBook').innerText;
-//                     results = {image:img, size:size}
-//                 }
+            let urls = await page.evaluate(() => {
+                let results = {}
+                if(document.querySelector('#bookDescriptionBox')){
+                    let text = document.querySelector('#bookDescriptionBox').innerText;
+                    let img = document.querySelector('.details-book-cover > img').getAttribute('src')
+                    let size = document.querySelector('a.btn.btn-primary.dlButton.addDownloadedBook').innerText;
+                     results ={description:text, image:img, size:size}
+                }else{
+                    let img = document.querySelector('.details-book-cover > img').getAttribute('src')
+                    let size = document.querySelector('a.btn.btn-primary.dlButton.addDownloadedBook').innerText;
+                    results = {image:img, size:size}
+                }
                 
                
-//                 return results;
-//             })
-//             browser.close();
-//             return resolve(urls);
-//         } catch (e) {
-//             return reject(e);
-//         }
-//     })
-// }
+                return results;
+            })
+            browser.close();
+            return resolve(urls);
+        } catch (e) {
+            return reject(e);
+        }
+    })
+}
