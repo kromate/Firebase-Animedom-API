@@ -204,51 +204,45 @@ exports.episodes = functions.https.onRequest((request, response) => {
 
 
 exports.downloadLink = functions.https.onRequest((request, response) => {
-    quest(`https://www1.gogoanime.ai/${request.query.link}`, (error, _response, html) => {
-    if (!error && _response.statusCode == 200) {
-          const $ = cheerio.load(html);
-        const Dlink = $('li.dowloads > a').attr('href');
-          DownloadLink(Dlink).then((data)=>{
-            response.set('Access-Control-Allow-Origin', '*');
-            response.send(data)
-        }).catch(console.error);
-
-        }
-      });
+     DownloadLink(request.query.link).then((data)=>{
+        console.log(data);
+        response.send(data) 
+    }).catch(console.error);
 });
 
 
-function DownloadLink (link) {
-    return new Promise((resolve, reject) => {
-        try {
+// function DownloadLink (link) {
+//     return new Promise((resolve, reject) => {
+//         try {
 
-            quest(link, (error, _response, html) => {
-                if (!error && _response.statusCode == 200) {
-                    const $ = cheerio.load(html);
-                    const DlinkTypes =[]
-                    $('a').each((i,el) => {
-                        if(i < 12){
-                            const title = $(el).text()
-                            const link = $(el).attr('href');
-                            DlinkTypes.push({name:title, link:link})
-                        }
+//             quest(link, (error, _response, html) => {
+//                 if (!error && _response.statusCode == 200) {
+//                     const $ = cheerio.load(html);
+//                     const DlinkTypes =[]
+//                     $('a').each((i,el) => {
+//                         if(i < 12){
+//                             const title = $(el).text()
+//                             const link = $(el).attr('href');
+//                             DlinkTypes.push({name:title, link:link})
+//                         }
 
-                    })
+//                     })
 
-                    return resolve(DlinkTypes);
-                }
-            })
-        } catch (e) {
-            return reject(e);
-        }
-    })
-}
+//                     return resolve(DlinkTypes);
+//                 }
+//             })
+//         } catch (e) {
+//             return reject(e);
+//         }
+//     })
+// }
 
 
 function DownloadLink (link) {
     return new Promise(async (resolve, reject) => {
         try {
-            const browser = await puppeteer.launch({
+          const browser = await puppeteer.launch({
+              headless:false,
                 args: [
                   '--no-sandbox',
                   '--disable-setuid-sandbox',

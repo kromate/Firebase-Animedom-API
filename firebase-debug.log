@@ -270,3 +270,137 @@ Issues? Report them at https://github.com/firebase/firebase-tools/issues and att
 }
 [debug] [2022-09-03T22:45:15.757Z] Building nodejs source
 [debug] [2022-09-03T22:45:15.758Z] Analyzing nodejs backend spec
+[debug] [2022-09-03T23:13:48.367Z] ----------------------------------------------------------------------
+[debug] [2022-09-03T23:13:48.368Z] Command:       /usr/local/bin/node /usr/local/bin/firebase emulators:start --only functions
+[debug] [2022-09-03T23:13:48.368Z] CLI Version:   10.2.1
+[debug] [2022-09-03T23:13:48.368Z] Platform:      darwin
+[debug] [2022-09-03T23:13:48.368Z] Node Version:  v16.14.0
+[debug] [2022-09-03T23:13:48.371Z] Time:          Sun Sep 04 2022 00:13:48 GMT+0100 (West Africa Standard Time)
+[debug] [2022-09-03T23:13:48.371Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2022-09-03T23:13:48.372Z] >>> [apiv2][query] GET https://firebase-public.firebaseio.com/cli.json [none]
+[debug] [2022-09-03T23:13:48.405Z] Object "" in "firebase.json" has unknown property: {"additionalProperty":"runtime"}
+[debug] [2022-09-03T23:13:48.407Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2022-09-03T23:13:48.408Z] > authorizing via signed-in user (akpananthony33@gmail.com)
+[info] i  emulators: Starting emulators: functions {"metadata":{"emulator":{"name":"hub"},"message":"Starting emulators: functions"}}
+[debug] [2022-09-03T23:13:48.415Z] [hub] writing locator at /var/folders/b3/352hwdw91439glm3mkblq3840000gn/T/hub-anime-dom.json
+[warn] ⚠  functions: The following emulators are not running, calls to these services from the Functions emulator will affect production: auth, firestore, database, hosting, pubsub, storage {"metadata":{"emulator":{"name":"functions"},"message":"The following emulators are not running, calls to these services from the Functions emulator will affect production: \u001b[1mauth, firestore, database, hosting, pubsub, storage\u001b[22m"}}
+[info] ✔  functions: Using node@16 from host. {"metadata":{"emulator":{"name":"functions"},"message":"Using node@16 from host."}}
+[debug] [2022-09-03T23:13:48.448Z] defaultcredentials: writing to file /Users/kromate/.config/firebase/akpananthony33_gmail_com_application_default_credentials.json
+[debug] [2022-09-03T23:13:48.450Z] Setting GAC to /Users/kromate/.config/firebase/akpananthony33_gmail_com_application_default_credentials.json {"metadata":{"emulator":{"name":"functions"},"message":"Setting GAC to /Users/kromate/.config/firebase/akpananthony33_gmail_com_application_default_credentials.json"}}
+[debug] [2022-09-03T23:13:48.451Z] > refreshing access token with scopes: []
+[debug] [2022-09-03T23:13:48.451Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2022-09-03T23:13:48.891Z] <<< HTTP RESPONSE 200 {"cache-control":"no-cache, no-store, max-age=0, must-revalidate","date":"Sat, 03 Sep 2022 23:13:48 GMT","expires":"Mon, 01 Jan 1990 00:00:00 GMT","pragma":"no-cache","content-type":"application/json; charset=utf-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","server":"scaffolding on HTTPServer2","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2022-09-03T23:13:48.937Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/anime-dom/adminSdkConfig [none]
+[debug] [2022-09-03T23:13:49.095Z] <<< [apiv2][status] GET https://firebase-public.firebaseio.com/cli.json 200
+[debug] [2022-09-03T23:13:49.096Z] <<< [apiv2][body] GET https://firebase-public.firebaseio.com/cli.json {"cloudBuildErrorAfter":1594252800000,"cloudBuildWarnAfter":1590019200000,"defaultNode10After":1594252800000,"minVersion":"3.0.5","node8DeploysDisabledAfter":1613390400000,"node8RuntimeDisabledAfter":1615809600000,"node8WarnAfter":1600128000000}
+[debug] [2022-09-03T23:13:49.473Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/anime-dom/adminSdkConfig 200
+[debug] [2022-09-03T23:13:49.473Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/anime-dom/adminSdkConfig {"projectId":"anime-dom","storageBucket":"anime-dom.appspot.com","locationId":"us-central"}
+[debug] [2022-09-03T23:13:49.509Z] Ignoring unsupported arg: auto_download {"metadata":{"emulator":{"name":"ui"},"message":"Ignoring unsupported arg: auto_download"}}
+[debug] [2022-09-03T23:13:49.510Z] Ignoring unsupported arg: port {"metadata":{"emulator":{"name":"ui"},"message":"Ignoring unsupported arg: port"}}
+[debug] [2022-09-03T23:13:49.510Z] Starting Emulator UI with command {"binary":"node","args":["/Users/kromate/.cache/firebase/emulators/ui-v1.6.5/server.bundle.js"],"optionalArgs":[],"joinArgs":false} {"metadata":{"emulator":{"name":"ui"},"message":"Starting Emulator UI with command {\"binary\":\"node\",\"args\":[\"/Users/kromate/.cache/firebase/emulators/ui-v1.6.5/server.bundle.js\"],\"optionalArgs\":[],\"joinArgs\":false}"}}
+[info] i  ui: Emulator UI logging to ui-debug.log {"metadata":{"emulator":{"name":"ui"},"message":"Emulator UI logging to \u001b[1mui-debug.log\u001b[22m"}}
+[debug] [2022-09-03T23:13:49.598Z] Web / API server started at localhost:4000
+ {"metadata":{"emulator":{"name":"ui"},"message":"Web / API server started at localhost:4000\n"}}
+[info] i  functions: Watching "/Users/kromate/Desktop/Firebase-Animedom-API/functions" for Cloud Functions... {"metadata":{"emulator":{"name":"functions"},"message":"Watching \"/Users/kromate/Desktop/Firebase-Animedom-API/functions\" for Cloud Functions..."}}
+[debug] [2022-09-03T23:13:49.778Z] Validating nodejs source
+[debug] [2022-09-03T23:13:50.067Z] checkFunctionsSDKVersion encountered error:Invalid Version:  {}
+[debug] [2022-09-03T23:13:50.068Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "serve": "firebase emulators:start --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "16"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "firebase-admin": "^9.8.0",
+    "firebase-functions": "^3.14.1"
+  },
+  "devDependencies": {
+    "firebase-functions-test": "^0.2.0"
+  },
+  "private": true
+}
+[debug] [2022-09-03T23:13:50.068Z] Building nodejs source
+[debug] [2022-09-03T23:13:50.068Z] Analyzing nodejs backend spec
+[info] ✔  functions[us-central1-letters]: http function initialized (http://localhost:5001/anime-dom/us-central1/letters). {"metadata":{"emulator":{"name":"functions"},"message":"\u001b[1mhttp\u001b[22m function initialized (http://localhost:5001/anime-dom/us-central1/letters)."}}
+[info] ✔  functions[us-central1-gl]: http function initialized (http://localhost:5001/anime-dom/us-central1/gl). {"metadata":{"emulator":{"name":"functions"},"message":"\u001b[1mhttp\u001b[22m function initialized (http://localhost:5001/anime-dom/us-central1/gl)."}}
+[info] ✔  functions[us-central1-genres]: http function initialized (http://localhost:5001/anime-dom/us-central1/genres). {"metadata":{"emulator":{"name":"functions"},"message":"\u001b[1mhttp\u001b[22m function initialized (http://localhost:5001/anime-dom/us-central1/genres)."}}
+[info] ✔  functions[us-central1-popular]: http function initialized (http://localhost:5001/anime-dom/us-central1/popular). {"metadata":{"emulator":{"name":"functions"},"message":"\u001b[1mhttp\u001b[22m function initialized (http://localhost:5001/anime-dom/us-central1/popular)."}}
+[info] ✔  functions[us-central1-recent]: http function initialized (http://localhost:5001/anime-dom/us-central1/recent). {"metadata":{"emulator":{"name":"functions"},"message":"\u001b[1mhttp\u001b[22m function initialized (http://localhost:5001/anime-dom/us-central1/recent)."}}
+[info] ✔  functions[us-central1-search]: http function initialized (http://localhost:5001/anime-dom/us-central1/search). {"metadata":{"emulator":{"name":"functions"},"message":"\u001b[1mhttp\u001b[22m function initialized (http://localhost:5001/anime-dom/us-central1/search)."}}
+[info] ✔  functions[us-central1-desc]: http function initialized (http://localhost:5001/anime-dom/us-central1/desc). {"metadata":{"emulator":{"name":"functions"},"message":"\u001b[1mhttp\u001b[22m function initialized (http://localhost:5001/anime-dom/us-central1/desc)."}}
+[info] ✔  functions[us-central1-episodes]: http function initialized (http://localhost:5001/anime-dom/us-central1/episodes). {"metadata":{"emulator":{"name":"functions"},"message":"\u001b[1mhttp\u001b[22m function initialized (http://localhost:5001/anime-dom/us-central1/episodes)."}}
+[info] ✔  functions[us-central1-downloadLink]: http function initialized (http://localhost:5001/anime-dom/us-central1/downloadLink). {"metadata":{"emulator":{"name":"functions"},"message":"\u001b[1mhttp\u001b[22m function initialized (http://localhost:5001/anime-dom/us-central1/downloadLink)."}}
+[info] 
+┌─────────────────────────────────────────────────────────────┐
+│ ✔  All emulators ready! It is now safe to connect your app. │
+│ i  View Emulator UI at http://localhost:4000                │
+└─────────────────────────────────────────────────────────────┘
+
+┌───────────┬────────────────┬─────────────────────────────────┐
+│ Emulator  │ Host:Port      │ View in Emulator UI             │
+├───────────┼────────────────┼─────────────────────────────────┤
+│ Functions │ localhost:5001 │ http://localhost:4000/functions │
+└───────────┴────────────────┴─────────────────────────────────┘
+  Emulator Hub running at localhost:4400
+  Other reserved ports: 4500
+
+Issues? Report them at https://github.com/firebase/firebase-tools/issues and attach the *-debug.log files.
+ 
+[debug] [2022-09-03T23:14:06.018Z] [work-queue] {"queueLength":1,"workRunningCount":0}
+[debug] [2022-09-03T23:14:06.019Z] [work-queue] {"queueLength":0,"workRunningCount":1}
+[debug] [2022-09-03T23:14:06.020Z] Accepted request GET /anime-dom/us-central1/downloadLink/?link=kanojo-okarishimasu-2nd-season-episode-10 --> us-central1-downloadLink
+[debug] [2022-09-03T23:14:06.029Z] [worker-pool] addWorker(us-central1-downloadLink) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] addWorker(us-central1-downloadLink)"}}
+[debug] [2022-09-03T23:14:06.029Z] [worker-pool] Adding worker with key us-central1-downloadLink, total=1 {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] Adding worker with key us-central1-downloadLink, total=1"}}
+[debug] [2022-09-03T23:14:06.029Z] [worker-pool] submitWork(triggerId=us-central1-downloadLink) {"metadata":{"emulator":{"name":"functions"},"message":"[worker-pool] submitWork(triggerId=us-central1-downloadLink)"}}
+[debug] [2022-09-03T23:14:06.030Z] [worker-us-central1-downloadLink-9f9d68b9-4db4-426f-8f54-794078fdbc4a]: Assigning socketPath: /var/folders/b3/352hwdw91439glm3mkblq3840000gn/T/fire_emu_24815.sock {"metadata":{"emulator":{"name":"functions"},"message":"[worker-us-central1-downloadLink-9f9d68b9-4db4-426f-8f54-794078fdbc4a]: Assigning socketPath: /var/folders/b3/352hwdw91439glm3mkblq3840000gn/T/fire_emu_24815.sock"}}
+[debug] [2022-09-03T23:14:06.030Z] [worker-us-central1-downloadLink-9f9d68b9-4db4-426f-8f54-794078fdbc4a]: BUSY {"metadata":{"emulator":{"name":"functions"},"message":"[worker-us-central1-downloadLink-9f9d68b9-4db4-426f-8f54-794078fdbc4a]: BUSY"}}
+[debug] [2022-09-03T23:14:06.477Z] [runtime-status] [24815] Functions runtime initialized. {"cwd":"/Users/kromate/Desktop/Firebase-Animedom-API/functions","node_version":"16.14.0"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-downloadLink"},"message":"[runtime-status] [24815] Functions runtime initialized. {\"cwd\":\"/Users/kromate/Desktop/Firebase-Animedom-API/functions\",\"node_version\":\"16.14.0\"}"}}
+[debug] [2022-09-03T23:14:06.477Z] [runtime-status] [24815] Disabled runtime features: undefined {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-downloadLink"},"message":"[runtime-status] [24815] Disabled runtime features: undefined"}}
+[debug] [2022-09-03T23:14:06.478Z] [runtime-status] [24815] Resolved module firebase-admin {"declared":true,"installed":true,"version":"9.12.0","resolution":"/Users/kromate/Desktop/Firebase-Animedom-API/node_modules/firebase-admin/lib/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-downloadLink"},"message":"[runtime-status] [24815] Resolved module firebase-admin {\"declared\":true,\"installed\":true,\"version\":\"9.12.0\",\"resolution\":\"/Users/kromate/Desktop/Firebase-Animedom-API/node_modules/firebase-admin/lib/index.js\"}"}}
+[debug] [2022-09-03T23:14:06.479Z] [runtime-status] [24815] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.23.0","resolution":"/Users/kromate/Desktop/Firebase-Animedom-API/node_modules/firebase-functions/lib/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-downloadLink"},"message":"[runtime-status] [24815] Resolved module firebase-functions {\"declared\":true,\"installed\":true,\"version\":\"3.23.0\",\"resolution\":\"/Users/kromate/Desktop/Firebase-Animedom-API/node_modules/firebase-functions/lib/index.js\"}"}}
+[debug] [2022-09-03T23:14:06.479Z] [runtime-status] [24815] Outgoing network have been stubbed. [{"name":"http","status":"mocked"},{"name":"http","status":"mocked"},{"name":"https","status":"mocked"},{"name":"https","status":"mocked"},{"name":"net","status":"mocked"}] {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-downloadLink"},"message":"[runtime-status] [24815] Outgoing network have been stubbed. [{\"name\":\"http\",\"status\":\"mocked\"},{\"name\":\"http\",\"status\":\"mocked\"},{\"name\":\"https\",\"status\":\"mocked\"},{\"name\":\"https\",\"status\":\"mocked\"},{\"name\":\"net\",\"status\":\"mocked\"}]"}}
+[debug] [2022-09-03T23:14:06.479Z] [runtime-status] [24815] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.23.0","resolution":"/Users/kromate/Desktop/Firebase-Animedom-API/node_modules/firebase-functions/lib/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-downloadLink"},"message":"[runtime-status] [24815] Resolved module firebase-functions {\"declared\":true,\"installed\":true,\"version\":\"3.23.0\",\"resolution\":\"/Users/kromate/Desktop/Firebase-Animedom-API/node_modules/firebase-functions/lib/index.js\"}"}}
+[debug] [2022-09-03T23:14:06.498Z] [runtime-status] [24815] Checked functions.config() {"config":{}} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-downloadLink"},"message":"[runtime-status] [24815] Checked functions.config() {\"config\":{}}"}}
+[debug] [2022-09-03T23:14:06.498Z] [runtime-status] [24815] firebase-functions has been stubbed. {"functionsResolution":{"declared":true,"installed":true,"version":"3.23.0","resolution":"/Users/kromate/Desktop/Firebase-Animedom-API/node_modules/firebase-functions/lib/index.js"}} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-downloadLink"},"message":"[runtime-status] [24815] firebase-functions has been stubbed. {\"functionsResolution\":{\"declared\":true,\"installed\":true,\"version\":\"3.23.0\",\"resolution\":\"/Users/kromate/Desktop/Firebase-Animedom-API/node_modules/firebase-functions/lib/index.js\"}}"}}
+[debug] [2022-09-03T23:14:06.498Z] [runtime-status] [24815] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.23.0","resolution":"/Users/kromate/Desktop/Firebase-Animedom-API/node_modules/firebase-functions/lib/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-downloadLink"},"message":"[runtime-status] [24815] Resolved module firebase-functions {\"declared\":true,\"installed\":true,\"version\":\"3.23.0\",\"resolution\":\"/Users/kromate/Desktop/Firebase-Animedom-API/node_modules/firebase-functions/lib/index.js\"}"}}
+[debug] [2022-09-03T23:14:06.498Z] [runtime-status] [24815] Resolved module firebase-admin {"declared":true,"installed":true,"version":"9.12.0","resolution":"/Users/kromate/Desktop/Firebase-Animedom-API/node_modules/firebase-admin/lib/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-downloadLink"},"message":"[runtime-status] [24815] Resolved module firebase-admin {\"declared\":true,\"installed\":true,\"version\":\"9.12.0\",\"resolution\":\"/Users/kromate/Desktop/Firebase-Animedom-API/node_modules/firebase-admin/lib/index.js\"}"}}
+[debug] [2022-09-03T23:14:06.499Z] [runtime-status] [24815] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.23.0","resolution":"/Users/kromate/Desktop/Firebase-Animedom-API/node_modules/firebase-functions/lib/index.js"} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-downloadLink"},"message":"[runtime-status] [24815] Resolved module firebase-functions {\"declared\":true,\"installed\":true,\"version\":\"3.23.0\",\"resolution\":\"/Users/kromate/Desktop/Firebase-Animedom-API/node_modules/firebase-functions/lib/index.js\"}"}}
+[debug] [2022-09-03T23:14:06.499Z] [runtime-status] [24815] firebase-admin has been stubbed. {"adminResolution":{"declared":true,"installed":true,"version":"9.12.0","resolution":"/Users/kromate/Desktop/Firebase-Animedom-API/node_modules/firebase-admin/lib/index.js"}} {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-downloadLink"},"message":"[runtime-status] [24815] firebase-admin has been stubbed. {\"adminResolution\":{\"declared\":true,\"installed\":true,\"version\":\"9.12.0\",\"resolution\":\"/Users/kromate/Desktop/Firebase-Animedom-API/node_modules/firebase-admin/lib/index.js\"}}"}}
+[debug] [2022-09-03T23:14:06.623Z] [runtime-status] [24815] Beginning invocation function downloadLink! {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-downloadLink"},"message":"[runtime-status] [24815] Beginning invocation function downloadLink!"}}
+[info] i  functions: Beginning execution of "downloadLink" {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-downloadLink"},"message":"Beginning execution of \"downloadLink\""}}
+[debug] [2022-09-03T23:14:06.623Z] [runtime-status] [24815] Running downloadLink in signature http {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-downloadLink"},"message":"[runtime-status] [24815] Running downloadLink in signature http"}}
+[debug] [2022-09-03T23:14:06.624Z] [runtime-status] [24815] Attempting to listen to socketPath: /var/folders/b3/352hwdw91439glm3mkblq3840000gn/T/fire_emu_24815.sock {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-downloadLink"},"message":"[runtime-status] [24815] Attempting to listen to socketPath: /var/folders/b3/352hwdw91439glm3mkblq3840000gn/T/fire_emu_24815.sock"}}
+[debug] [2022-09-03T23:14:06.627Z] [functions] Runtime ready! Sending request! {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Runtime ready! Sending request!"}}
+[debug] [2022-09-03T23:14:06.628Z] [functions] Got req.url=/anime-dom/us-central1/downloadLink/?link=kanojo-okarishimasu-2nd-season-episode-10, mapping to path=/?link=kanojo-okarishimasu-2nd-season-episode-10 {"metadata":{"emulator":{"name":"functions"},"message":"[functions] Got req.url=/anime-dom/us-central1/downloadLink/?link=kanojo-okarishimasu-2nd-season-episode-10, mapping to path=/?link=kanojo-okarishimasu-2nd-season-episode-10"}}
+[debug] [2022-09-03T23:14:06.631Z] [runtime-status] [24815] Ephemeral server handling GET request {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-downloadLink"},"message":"[runtime-status] [24815] Ephemeral server handling GET request"}}
+[debug] [2022-09-03T23:14:06.632Z] [runtime-status] [24815] Ephemeral server survived. {"metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-downloadLink"},"message":"[runtime-status] [24815] Ephemeral server survived."}}
+[info] >  Error: Failed to launch the browser process! spawn /usr/bin/chromium-browser ENOENT {"user":"Error: Failed to launch the browser process! spawn /usr/bin/chromium-browser ENOENT","metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-downloadLink"},"message":"\u001b[90m> \u001b[39m Error: Failed to launch the browser process! spawn /usr/bin/chromium-browser ENOENT"}}
+[info] >   {"user":"","metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-downloadLink"},"message":"\u001b[90m> \u001b[39m "}}
+[info] >   {"user":"","metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-downloadLink"},"message":"\u001b[90m> \u001b[39m "}}
+[info] >  TROUBLESHOOTING: https://github.com/puppeteer/puppeteer/blob/main/docs/troubleshooting.md {"user":"TROUBLESHOOTING: https://github.com/puppeteer/puppeteer/blob/main/docs/troubleshooting.md","metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-downloadLink"},"message":"\u001b[90m> \u001b[39m TROUBLESHOOTING: https://github.com/puppeteer/puppeteer/blob/main/docs/troubleshooting.md"}}
+[info] >   {"user":"","metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-downloadLink"},"message":"\u001b[90m> \u001b[39m "}}
+[info] >      at onClose (/Users/kromate/Desktop/Firebase-Animedom-API/node_modules/puppeteer/lib/cjs/puppeteer/node/BrowserRunner.js:193:20) {"user":"    at onClose (/Users/kromate/Desktop/Firebase-Animedom-API/node_modules/puppeteer/lib/cjs/puppeteer/node/BrowserRunner.js:193:20)","metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-downloadLink"},"message":"\u001b[90m> \u001b[39m     at onClose (/Users/kromate/Desktop/Firebase-Animedom-API/node_modules/puppeteer/lib/cjs/puppeteer/node/BrowserRunner.js:193:20)"}}
+[info] >      at ChildProcess.<anonymous> (/Users/kromate/Desktop/Firebase-Animedom-API/node_modules/puppeteer/lib/cjs/puppeteer/node/BrowserRunner.js:185:85) {"user":"    at ChildProcess.<anonymous> (/Users/kromate/Desktop/Firebase-Animedom-API/node_modules/puppeteer/lib/cjs/puppeteer/node/BrowserRunner.js:185:85)","metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-downloadLink"},"message":"\u001b[90m> \u001b[39m     at ChildProcess.<anonymous> (/Users/kromate/Desktop/Firebase-Animedom-API/node_modules/puppeteer/lib/cjs/puppeteer/node/BrowserRunner.js:185:85)"}}
+[info] >      at ChildProcess.emit (node:events:520:28) {"user":"    at ChildProcess.emit (node:events:520:28)","metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-downloadLink"},"message":"\u001b[90m> \u001b[39m     at ChildProcess.emit (node:events:520:28)"}}
+[info] >      at Process.ChildProcess._handle.onexit (node:internal/child_process:289:12) {"user":"    at Process.ChildProcess._handle.onexit (node:internal/child_process:289:12)","metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-downloadLink"},"message":"\u001b[90m> \u001b[39m     at Process.ChildProcess._handle.onexit (node:internal/child_process:289:12)"}}
+[info] >      at onErrorNT (node:internal/child_process:478:16) {"user":"    at onErrorNT (node:internal/child_process:478:16)","metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-downloadLink"},"message":"\u001b[90m> \u001b[39m     at onErrorNT (node:internal/child_process:478:16)"}}
+[info] >      at processTicksAndRejections (node:internal/process/task_queues:83:21) {"user":"    at processTicksAndRejections (node:internal/process/task_queues:83:21)","metadata":{"emulator":{"name":"functions"},"function":{"name":"us-central1-downloadLink"},"message":"\u001b[90m> \u001b[39m     at processTicksAndRejections (node:internal/process/task_queues:83:21)"}}
+[debug] [2022-09-03T23:14:24.794Z] Received signal SIGINT (Ctrl-C) 1
+[info]  
+[info] i  emulators: Received SIGINT (Ctrl-C) for the first time. Starting a clean shutdown. 
+[info] i  emulators: Please wait for a clean shutdown or send the SIGINT (Ctrl-C) signal again to stop right now. 
+[info] i  emulators: Shutting down emulators. {"metadata":{"emulator":{"name":"hub"},"message":"Shutting down emulators."}}
+[info] i  ui: Stopping Emulator UI {"metadata":{"emulator":{"name":"ui"},"message":"Stopping Emulator UI"}}
+[warn] ⚠  Emulator UI has exited upon receiving signal: SIGINT 
+[info] i  functions: Stopping Functions Emulator {"metadata":{"emulator":{"name":"functions"},"message":"Stopping Functions Emulator"}}
+[info] i  functions: Waiting for all functions to finish... {"metadata":{"emulator":{"name":"functions"},"message":"Waiting for all functions to finish..."}}
