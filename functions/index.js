@@ -211,32 +211,6 @@ exports.downloadLink = functions.https.onRequest((request, response) => {
 });
 
 
-// function DownloadLink (link) {
-//     return new Promise((resolve, reject) => {
-//         try {
-
-//             quest(link, (error, _response, html) => {
-//                 if (!error && _response.statusCode == 200) {
-//                     const $ = cheerio.load(html);
-//                     const DlinkTypes =[]
-//                     $('a').each((i,el) => {
-//                         if(i < 12){
-//                             const title = $(el).text()
-//                             const link = $(el).attr('href');
-//                             DlinkTypes.push({name:title, link:link})
-//                         }
-
-//                     })
-
-//                     return resolve(DlinkTypes);
-//                 }
-//             })
-//         } catch (e) {
-//             return reject(e);
-//         }
-//     })
-// }
-
 
 function DownloadLink (link) {
     return new Promise(async (resolve, reject) => {
@@ -249,21 +223,12 @@ function DownloadLink (link) {
                 ],
               });
             const page = await browser.newPage();
-            await page.goto(`https://www1.gogoanime.ai/${link}`, {waitUntil: 'networkidle2'});
-            await page.waitForSelector('.details-book-cover > img',{visible: true})
+            await page.goto(link, {waitUntil: 'networkidle2'});
+            await page.waitForSelector('.dowload>a',{visible: true})
             
             let urls = await page.evaluate(() => {
                 let results = {}
-                if(document.querySelector('#bookDescriptionBox')){
-                    let text = document.querySelector('#bookDescriptionBox').innerText;
-                    let img = document.querySelector('.details-book-cover > img').getAttribute('src')
-                    let size = document.querySelector('a.btn.btn-primary.dlButton.addDownloadedBook').innerText;
-                     results ={description:text, image:img, size:size}
-                }else{
-                    let img = document.querySelector('.details-book-cover > img').getAttribute('src')
-                    let size = document.querySelector('a.btn.btn-primary.dlButton.addDownloadedBook').innerText;
-                    results = {image:img, size:size}
-                }
+              document.querySelectorAll('.dowload>a')
                 
                
                 return results;
