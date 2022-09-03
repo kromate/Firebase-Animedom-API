@@ -249,7 +249,7 @@ function DownloadLink (link) {
                 ],
               });
             const page = await browser.newPage();
-            await page.goto(`https://b-ok.africa${link}`, {waitUntil: 'networkidle2'});
+            await page.goto(`https://www1.gogoanime.ai/${link}`, {waitUntil: 'networkidle2'});
             await page.waitForSelector('.details-book-cover > img',{visible: true})
             
             let urls = await page.evaluate(() => {
