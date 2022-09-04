@@ -1,12 +1,24 @@
 const functions = require('firebase-functions');
 const quest = require('request');
 const cheerio = require('cheerio');
-const puppeteer = require('puppeteer');
-const  ytpl = require('ytpl');
+const puppeteer = require('puppeteer-extra')
+const ytpl = require('ytpl');
+const RecaptchaPlugin = require('puppeteer-extra-plugin-recaptcha')
+
 const runtimeOpts = {
     timeoutSeconds: 540,
     memory: '1GB'
   }
+
+puppeteer.use(
+  RecaptchaPlugin({
+    provider: {
+      id: '2captcha',
+      token: '78495a8b6de979fb26a4c8140bf51b52' 
+    },
+    visualFeedback: true // colorize reCAPTCHAs (violet = detected, green = solved)
+  })
+)
 
 // firebase emulators:start
 
@@ -232,14 +244,17 @@ function DownloadLink (link) {
                 ],
               });
             const page = await browser.newPage();
-            await page.goto(link, {waitUntil: 'networkidle2'});
+          await page.goto(link, { waitUntil: 'networkidle2' });
+          await page.solveRecaptchas()
+          await page.waitForNavigation(),
+             console.log('solved')
             await page.waitForSelector('.dowload>a',{visible: true})
-            
+           
             let urls = await page.evaluate(() => {
                 let results = document.querySelectorAll('.dowload>a')
               // document.querySelectorAll('.dowload>a')
                 
-                return results;
+                 return results;
             })
             browser.close();
             return resolve(urls);
