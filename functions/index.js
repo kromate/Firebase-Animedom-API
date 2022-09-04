@@ -6,7 +6,7 @@ const ytpl = require('ytpl');
 const RecaptchaPlugin = require('puppeteer-extra-plugin-recaptcha')
 
 const runtimeOpts = {
-    timeoutSeconds: 540,
+    timeoutSeconds: 1200,
     memory: '1GB'
   }
 
@@ -247,8 +247,12 @@ function DownloadLink (link) {
           await page.goto(link, { waitUntil: 'networkidle2' });
              console.log('solved3')
           await page.solveRecaptchas()
-             console.log('solved2')
-          await page.waitForNavigation(),
+          console.log('solved2')
+          await page.waitForSelector('#btn-submit',{visible: true})
+          await page.evaluate(() => { 
+ document.querySelector('#btn-submit').click()
+          })
+             
              console.log('solved1')
             await page.waitForSelector('.dowload>a',{visible: true})
            
