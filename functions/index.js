@@ -245,9 +245,11 @@ function DownloadLink (link) {
               });
             const page = await browser.newPage();
           await page.goto(link, { waitUntil: 'networkidle2' });
+             console.log('solved3')
           await page.solveRecaptchas()
+             console.log('solved2')
           await page.waitForNavigation(),
-             console.log('solved')
+             console.log('solved1')
             await page.waitForSelector('.dowload>a',{visible: true})
            
             let urls = await page.evaluate(() => {
