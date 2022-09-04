@@ -203,11 +203,20 @@ exports.episodes = functions.https.onRequest((request, response) => {
 });
 
 
-exports.downloadLink = functions.https.onRequest((request, response) => {
-     DownloadLink(request.query.link).then((data)=>{
+exports.downloadLink = functions.https.onRequest((request, response) =>
+{
+  quest(`https://www1.gogoanime.ai/${request.query.link}`, (error, _response, html) =>
+  {
+    if (!error && _response.statusCode == 200) {
+      const $ = cheerio.load(html);
+      const Dlink = $('li.dowloads > a').attr('href');
+      DownloadLink(Dlink).then((data) =>
+      {
         console.log(data);
-        response.send(data) 
-    }).catch(console.error);
+        response.send(data)
+      }).catch(console.error);
+    }
+  })
 });
 
 
@@ -227,10 +236,9 @@ function DownloadLink (link) {
             await page.waitForSelector('.dowload>a',{visible: true})
             
             let urls = await page.evaluate(() => {
-                let results = {}
-              document.querySelectorAll('.dowload>a')
+                let results = document.querySelectorAll('.dowload>a')
+              // document.querySelectorAll('.dowload>a')
                 
-               
                 return results;
             })
             browser.close();
